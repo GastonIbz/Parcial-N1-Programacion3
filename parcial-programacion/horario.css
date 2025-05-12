@@ -1,0 +1,177 @@
+/* Estilos básicos para la página */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/Subma.png');
+    background-repeat: repeat;
+    background-size: auto;
+    box-sizing: border-box; /* Para que el tamaño sea más fácil de controlar */
+    min-height: 100vh; /* Para que la página ocupe al menos toda la pantalla */
+}
+.contenedor-principal {
+    background-color: #c4c4c486; /* Fondo casi transparente */
+}
+/* Horario */
+#tabla-horario {
+    width: 100%;          /* Ancho total del contenedor */
+    border-collapse: collapse; /* Unir los bordes de las celdas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.055); /* Sombra de horario */
+}
+
+/* Celdas de la tabla */
+#tabla-horario th,
+#tabla-horario td {
+    padding: 8px 6px; /* Espacio dentro de las celdas */
+    text-align: center; /* Texto centrado */
+    vertical-align: middle; /* Texto centrado verticalmente */
+    border-bottom: 2px solid #c94a00f5; /* Borde del botón inferior */
+    border-right: 2px solid #c94a00f5; /* Borde del botón derecho */
+}
+
+/* Elimina el borde derecho de la última columna */
+#tabla-horario tr th:last-child,
+#tabla-horario tr td:last-child {
+    border-right: none;
+}
+
+/* Encabezados de los días */
+#tabla-horario th {
+    background-color: #000000f1; /* Fondo oscuro */
+    font-weight: bold; /* Texto en negrita */
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Columna de las horas */
+.hora {
+    background-color:  #000000f1; /* Fondo oscuro */
+    font-weight: bold;
+    color: #ffffff
+}
+
+/* Nombre del profesor */
+.profesor {
+    color: #000000; /* Texto negro */
+    font-size: 0.9em; /* Tamaño más pequeño */
+    display: block; /* Ocupa toda la línea */
+    margin-top: 5px; /* Espacio arriba */
+}
+
+/* Fila de recreo */
+.recreo {
+    background-color: #000000f1; /* Fondo oscuro */
+    font-style: italic; /* Texto en cursiva */
+    color: #555;
+}
+/* Botón Modo Luces */
+#boton-luces {
+    position: absolute; /* Para ubicarlo donde quiera */
+    bottom: 195px; /* Ubicarlo desde abajo */
+    right: 655px; /* Ubicarlo desde la derecha */
+    background-color: #25282b; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    padding: 25px; /* Espacio interior */
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor a la "Manito" */
+    font-size: 1.5em; /* Letra más grande */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.062); /* Sombra */
+    transition: background-color 0.4s ease; /* Cambio suave de color en la transición */
+    z-index: 10; /* Estar encima de otros elementos */
+}
+
+#boton-luces:hover {
+    background-color: #1288d6; /* Color celeste al apretar con el mouse */
+}
+
+/* Reproductor de Audio */
+.audio-player-container {
+    background-image: url('img/Subma.png'); /* Fondo Imagen */
+    background-size: cover; /* Cubre toda el área */
+    background-repeat: no-repeat; /* No repite la imagen */
+    display: flex; /* Ordena los elementos que tiene */
+    flex-direction: column; /* Pone que uno este abajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    position: relative;
+}
+
+.audio-player {
+    background-color: #282828; /* Fondo oscuro */
+    color: #eee; /* Texto Blanco */
+    padding: 30px; /* Espacio interior */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex; /* Ordena controles */
+    align-items: center; /* Centra verticalmente */
+    width: 60%; /* Ancho */
+    max-width: 500px; /* Ancho máximo */
+    margin: 70px auto; /* Espacio arriba/abajo y centrado */
+    box-sizing: border-box;
+    margin-bottom: 189px; /* Espacio inferior */
+    margin-left: 520px;
+}
+
+.mp3-player-visual {
+    display: none; /* Ocultar */
+}
+
+.audio-player button {
+    background-color: transparent; /* Sin fondo */
+    color: #eee; /* Texto claro */
+    border: none; /* Sin borde */
+    padding: 8px 10px; /* Espacio interior */
+    margin-left: 5px;
+    border-radius: 5px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor a la "Manito" */
+    font-size: 1em; /* Tamaño de la letra */
+    line-height: 1; /* Centra verticalmente */
+    outline: none; /* Quita el borde al enfocar */
+}
+
+.audio-player button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el mouse */
+}
+
+.audio-player input[type="range"] {
+    flex-grow: 1; /* Ocupa espacio */
+    height: 6px; /* Altura */
+    -webkit-appearance: none; /* Quita estilos predeterminados */
+    appearance: none; /* Quita estilos predeterminados */
+    background: #404040; /* Fondo */
+    border-radius: 3px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor por la "Manito" */
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.audio-player input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px; /* Ancho */
+    height: 12px; /* Alto */
+    background: #eee; /* Color */
+    border-radius: 50%; /* Forma redonda */
+    cursor: pointer; /* Cambia el cursor por la "Manito" */
+}
+
+.audio-player input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: #ccc; /* Color al pasar el mouse */
+}
+
+.audio-player input[type="range"]::-moz-range-thumb {
+    width: 12px; /* Ancho */
+    height: 12px; /* Alto */
+    background: #eee; /* Color */
+    border-radius: 50%; /* Forma redonda */
+    cursor: pointer; /* Cambia el cursor por la "Manito" */
+    border: none; /* Quita el borde */
+}
+
+.audio-player input[type="range"]::-moz-range-thumb:hover {
+    background-color: #ccc; /* Color al pasar el mouse */
+}
+
+.audio-player span {
+    font-size: 1.1em; /* Tamaño de la letra */
+    color: #ccc; /* Color de la letra */
+    margin-left: 1px;
+}
